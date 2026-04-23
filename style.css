@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --input-focus: rgba(99, 102, 241, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.3) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.3) 0, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--input-focus);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ========================================= */
+/* 무신사 스타일 대시보드 전용 CSS (musinsa-body) */
+/* ========================================= */
+
+body.musinsa-body {
+  display: block;
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  min-height: 100vh;
+}
+
+/* 상단 네비게이션 헤더 */
+.musinsa-header {
+  background: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.musinsa-top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.musinsa-logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.musinsa-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.musinsa-nav-links li {
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.musinsa-nav-links li:hover {
+  color: #ccc;
+}
+
+.musinsa-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.musinsa-logout-btn {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+
+.musinsa-logout-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.musinsa-sub-nav {
+  background: #000;
+  border-top: 1px solid #333;
+  padding: 10px 0;
+}
+
+.musinsa-search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.musinsa-search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.musinsa-search-bar input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+  color: #000; /* 검색어는 검정색으로 */
+  background: #fff;
+}
+
+.musinsa-search-bar button {
+  background: #fff;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.musinsa-categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.musinsa-categories span {
+  cursor: pointer;
+}
+
+/* 메인 영역 */
+.musinsa-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 50px;
+}
+
+.musinsa-hero {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.hero-banner {
+  flex: 2;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: #fff;
+}
+
+.hero-banner-small {
+  flex: 1;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: #fff;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-banner-small .hero-text h2 {
+  font-size: 32px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.musinsa-brand-icons {
+  padding: 20px;
+  background: #f8f8f8;
+  margin-bottom: 30px;
+}
+
+.brand-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand-item {
+  text-align: center;
+  background: #ececec;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  flex: 1;
+  cursor: pointer;
+}
+
+.brand-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.musinsa-products {
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-info {
+  font-size: 14px;
+}
+
+.product-info .brand {
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.product-info .name {
+  color: #555;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-container .discount {
+  color: #d00;
+  font-weight: 700;
+}
+
+.price-container .price {
+  font-weight: 700;
+  font-size: 16px;
+}

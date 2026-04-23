@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대시보드</title>
+    <!-- 공통 CSS 사용 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 상단 네비게이션 -->
+    <header class="musinsa-header">
+        <div class="musinsa-top-nav">
+            <div class="musinsa-logo">MUSINSA</div>
+            <ul class="musinsa-nav-links">
+                <li>BEAUTY</li>
+                <li>SPORTS</li>
+                <li>OUTLET</li>
+                <li>BOUTIQUE</li>
+                <li>KICKS</li>
+                <li>KIDS</li>
+                <li>USED</li>
+            </ul>
+            <div class="musinsa-user-actions">
+                <span id="welcome-message">사용자 정보</span>
+                <button onclick="handleLogout()" class="musinsa-logout-btn">로그아웃</button>
+            </div>
+        </div>
+        <div class="musinsa-sub-nav">
+            <div class="musinsa-search-container">
+                <!-- Search bar -->
+                <div class="musinsa-search-bar">
+                    <input type="text" placeholder="티셔츠 페스티벌 최대 80% 할인">
+                    <button>🔍</button>
+                </div>
+            </div>
+            <div class="musinsa-categories">
+                <span>추천</span>
+                <span>랭킹</span>
+                <span>세일</span>
+                <span style="color:red">오직 무신사 뷰티</span>
+                <span style="color:skyblue">티셔츠 페스티벌</span>
+                <span>유즈드 매일 신상</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="musinsa-main">
+        <!-- 메인 배너 영역 (히어로 이미지) -->
+        <section class="musinsa-hero">
+            <div class="hero-banner" style="background-image: url('images/hero_banner.png');">
+                <div class="hero-text">
+                    <h2>티셔츠 페스티벌</h2>
+                    <p>최대 80% 할인과 결제혜택까지</p>
+                </div>
+            </div>
+            <div class="hero-banner-small" style="background-image: url('images/hero_banner.png');">
+                <div class="hero-text">
+                    <h2>스포츠 첫 구매</h2>
+                    <p>최대 3만원 쿠폰</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 아이콘 메뉴 영역 -->
+        <section class="musinsa-brand-icons">
+            <div class="brand-grid">
+                <div class="brand-item"><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=50&h=50" alt="티셔츠"><br>리 × 오버더피치</div>
+                <div class="brand-item"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=50&h=50" alt="티셔츠"><br>다크룸 × 챔피온</div>
+                <div class="brand-item"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=50&h=50" alt="신발"><br>커버낫 × 미즈노</div>
+                <div class="brand-item"><img src="https://images.unsplash.com/photo-1434389678259-df31bf4eb360?auto=format&fit=crop&w=50&h=50" alt="가방"><br>엑스톤즈 × 슝필드</div>
+                <div class="brand-item"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=50&h=50" alt="패션"><br>레이브 헬로키티</div>
+            </div>
+        </section>
+
+        <!-- 상품 추천 그리드 영역 -->
+        <section class="musinsa-products">
+            <h3 class="section-title">지금 무신사 카테고리 트렌드<br><span style="font-size:16px; font-weight:normal; color:#555;">긴소매 티셔츠 추천</span></h3>
+            
+            <div class="product-grid">
+                <!-- 상품 1 -->
+                <div class="product-card">
+                    <img src="images/product_1.png" alt="Product">
+                    <div class="product-info">
+                        <span class="brand">르아르</span>
+                        <p class="name">[S/SS] 소프트 헨리넥 레이어드 티셔츠 세트</p>
+                        <div class="price-container">
+                            <span class="discount"></span>
+                            <span class="price">39,700원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 2 -->
+                <div class="product-card">
+                    <img src="images/product_2.png" alt="Product">
+                    <div class="product-info">
+                        <span class="brand">코이리스</span>
+                        <p class="name">리브 오프숄더 나그랑 긴팔 티</p>
+                        <div class="price-container">
+                            <span class="discount">37%</span>
+                            <span class="price">26,910원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 3 -->
+                <div class="product-card">
+                    <img src="images/product_3.png" alt="Product">
+                    <div class="product-info">
+                        <span class="brand">썸플레이스</span>
+                        <p class="name">스트라이프 배색 스티치 긴팔 티셔츠</p>
+                        <div class="price-container">
+                            <span class="discount">25%</span>
+                            <span class="price">36,700원</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 상품 4 -->
+                <div class="product-card">
+                    <img src="images/product_1.png" alt="Product">
+                    <div class="product-info">
+                        <span class="brand">에스이에스티</span>
+                        <p class="name">Stripe Layered Long Sleeve</p>
+                        <div class="price-container">
+                            <span class="discount">53%</span>
+                            <span class="price">32,900원</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // override flex center styles
+            document.body.className = "musinsa-body";
+            
+            const currentUserStr = localStorage.getItem('currentUser');
+            if (!currentUserStr) {
+                alert("로그인이 필요한 페이지입니다!");
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            const currentUser = JSON.parse(currentUserStr);
+            document.getElementById('welcome-message').innerText = currentUser.name + "님 환영합니다!";
+        });
+
+        function handleLogout() {
+            localStorage.removeItem('currentUser');
+            alert("정상적으로 로그아웃 되었습니다.");
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
