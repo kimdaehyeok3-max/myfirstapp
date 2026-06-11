@@ -1,0 +1,53 @@
+/* ══════════════════════════════════════════
+   FITMATE — Service Detail Page
+   ══════════════════════════════════════════ */
+
+.detail-hero {
+  padding: 80px 0 60px; background: var(--white);
+}
+.detail-hero-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center;
+}
+/* detail-back styles → see components.css */
+.detail-tag { margin-bottom: 12px; }
+.detail-title {
+  font-size: 2.4rem; font-weight: 800; letter-spacing: -1px;
+  line-height: 1.2; margin-bottom: 16px;
+}
+.detail-desc {
+  font-size: 1rem; line-height: 1.7; color: var(--gray-700);
+  margin-bottom: 32px;
+}
+.detail-meta { display: flex; gap: 32px; margin-bottom: 32px; }
+.detail-meta-label { font-size: 0.7rem; color: var(--gray-500); letter-spacing: 1px; text-transform: uppercase; }
+.detail-meta-value { font-size: 1.1rem; font-weight: 700; margin-top: 4px; }
+.detail-image {
+  aspect-ratio: 4/3; background: var(--gray-50);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+
+/* Process Steps */
+.process-section { padding: 80px 0; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.process-step {
+  text-align: center; padding: 32px 16px;
+  position: relative;
+}
+.process-step-num {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  color: var(--gray-300); margin-bottom: 16px;
+}
+.process-step-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--gray-50); margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.process-step-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.process-step-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.5; }
+
+@media (max-width: 768px) {
+  .detail-hero-inner { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+}

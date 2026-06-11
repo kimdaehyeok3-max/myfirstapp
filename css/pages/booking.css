@@ -1,0 +1,13 @@
+/* ══════════════════════════════════════════
+   FITMATE — Booking Page
+   ══════════════════════════════════════════ */
+
+.booking-container {
+  max-width: 640px; margin: 0 auto; padding: 60px 24px 80px;
+}
+.booking-title {
+  font-size: 2rem; font-weight: 800; margin-bottom: 8px;
+}
+.booking-subtitle {
+  color: var(--gray-500); margin-bottom: 36px;
+}

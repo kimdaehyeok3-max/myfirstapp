@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자주 묻는 질문 — FITMATE</title>
+  <meta name="description" content="핏메이트 자주 묻는 질문입니다.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .page-header { padding: 80px 0 40px; text-align: center; }
+    .page-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; }
+    .faq-list { max-width: 800px; margin: 0 auto 80px; padding: 0 24px; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 24px 0; }
+    .faq-q { font-weight: 700; font-size: 1.1rem; color: var(--black); margin-bottom: 12px; }
+    .faq-a { color: var(--gray-600); line-height: 1.6; }
+  </style>
+</head>
+<body data-page="faq">
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="navigate('landing'); return false;">FITMATE<span>퍼스널 스타일링</span></a>
+    <div class="nav-links">
+      <a href="#" onclick="scrollToSection('services'); return false;">서비스</a>
+      <a href="#" onclick="scrollToSection('pricing'); return false;">가격</a>
+      <a href="#" onclick="scrollToSection('personas'); return false;">스토리</a>
+      <a href="#" onclick="scrollToSection('reviews'); return false;">후기</a>
+    </div>
+    <div class="nav-auth" id="navAuth">
+      <button class="btn-text" onclick="openModal('login')">로그인</button>
+      <button class="btn-primary" onclick="openModal('register')">시작하기</button>
+    </div>
+    <div class="nav-user" id="navUser">
+      <div class="nav-avatar" id="navAvatar" onclick="toggleDropdown()"></div>
+      <div class="nav-dropdown" id="navDropdown">
+        <a href="#" onclick="navigate('mypage'); return false;">마이페이지</a>
+        <a href="#" onclick="navigate('diagnosis'); return false;">코디 진단</a>
+        <a href="#" onclick="navigate('booking'); return false;">예약하기</a>
+        <button onclick="logout()">로그아웃</button>
+      </div>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login')">✕</button>
+    <div class="modal-title">로그인</div>
+    <div class="modal-subtitle">핏메이트에 오신 것을 환영합니다</div>
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group"><label class="form-label">이메일</label><input class="form-input" type="email" id="loginEmail" placeholder="example@email.com" required></div>
+      <div class="form-group"><label class="form-label">비밀번호</label><input class="form-input" type="password" id="loginPw" placeholder="비밀번호를 입력하세요" required></div>
+      <div class="form-error" id="loginError">이메일 또는 비밀번호가 일치하지 않습니다</div>
+      <button type="submit" class="btn-primary btn-full btn-lg" style="margin-top:8px">로그인</button>
+    </form>
+    <div class="modal-divider">또는</div>
+    <button class="btn-outline btn-full" onclick="alert('소셜 로그인은 준비 중입니다')">카카오로 시작하기</button>
+    <div class="modal-switch">계정이 없으신가요? <a onclick="switchModal('login','register')">회원가입</a></div>
+  </div>
+</div>
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('register')">✕</button>
+    <div class="modal-title">회원가입</div>
+    <div class="modal-subtitle">나만의 스타일 여정을 시작하세요</div>
+    <form onsubmit="handleRegister(event)">
+      <div class="form-group"><label class="form-label">이름</label><input class="form-input" type="text" id="regName" placeholder="이름을 입력하세요" required></div>
+      <div class="form-group"><label class="form-label">이메일</label><input class="form-input" type="email" id="regEmail" placeholder="example@email.com" required></div>
+      <div class="form-group"><label class="form-label">비밀번호</label><input class="form-input" type="password" id="regPw" placeholder="8자 이상" required minlength="8"></div>
+      <div class="form-group"><label class="form-label">비밀번호 확인</label><input class="form-input" type="password" id="regPwConfirm" placeholder="비밀번호를 다시 입력하세요" required></div>
+      <div class="form-error" id="regError"></div>
+      <button type="submit" class="btn-primary btn-full btn-lg" style="margin-top:8px">가입하기</button>
+    </form>
+    <div class="modal-switch">이미 계정이 있으신가요? <a onclick="switchModal('register','login')">로그인</a></div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="page-wrapper">
+  <div class="page-header">
+    <h1 class="page-title">자주 묻는 질문</h1>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Q. 온라인 코디 진단은 어떻게 진행되나요?</div>
+      <div class="faq-a">결제 완료 후, 체형과 선호하는 스타일 등에 대한 사전 설문지 작성 링크를 보내드립니다. 작성해주신 설문지와 사진을 바탕으로 전문 스타일리스트가 분석하여 24시간 내에 맞춤 코디 리포트를 전달해 드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 오프라인 동행 쇼핑의 지역과 시간은 어떻게 되나요?</div>
+      <div class="faq-a">현재 오프라인 동행 쇼핑은 서울 및 경기 일부 지역에서 진행 가능합니다. 소요 시간은 기본 2시간이며, 사전에 스타일리스트와 협의하여 방문할 매장을 결정하게 됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 결제 후 환불이 가능한가요?</div>
+      <div class="faq-a">온라인 진단의 경우 설문지 작성 전까지 100% 환불 가능하며, 오프라인 쇼핑은 예약일 3일 전까지 취소 시 전액 환불이 가능합니다. 자세한 환불 규정은 이용약관을 참고해 주세요.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 구매 대행 서비스 시 의류 비용은 어떻게 결제하나요?</div>
+      <div class="faq-a">스타일리스트가 제안한 리스트를 확인하시고 최종 구매를 결정하시면, 해당 의류의 실비 및 배송비를 합산하여 추가 결제를 요청드립니다.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><div class="footer-logo">FITMATE</div><p class="footer-desc">전문가의 1:1 코디 진단부터 오프라인 동행 쇼핑까지. 퍼스널 스타일링의 새로운 기준.</p></div>
+        <div class="footer-col"><div class="footer-col-title">서비스</div><a href="#" onclick="navigate('service-online'); return false;">온라인 코디 진단</a><a href="#" onclick="navigate('service-offline'); return false;">오프라인 동행 쇼핑</a><a href="#" onclick="navigate('service-delivery'); return false;">구매 대행</a></div>
+        <div class="footer-col"><div class="footer-col-title">고객센터</div><a href="#" onclick="navigate('faq'); return false;">자주 묻는 질문</a><a href="#" onclick="navigate('terms'); return false;">이용약관</a><a href="#" onclick="navigate('privacy'); return false;">개인정보처리방침</a></div>
+        <div class="footer-col"><div class="footer-col-title">연결</div><a href="#" onclick="if(typeof showToast === 'function') showToast('준비 중인 링크입니다.'); return false;">Instagram</a><a href="#" onclick="if(typeof showToast === 'function') showToast('준비 중인 링크입니다.'); return false;">카카오톡 채널</a><a href="mailto:support@fitmate.kr">support@fitmate.kr</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 FITMATE. All rights reserved.</span><span>사업자등록번호 000-00-00000</span></div>
+    </div>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="../js/app.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>
