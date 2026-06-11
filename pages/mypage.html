@@ -72,6 +72,45 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="bookingDetailModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('bookingDetail')">✕</button>
+    <div class="modal-title">예약 상세 내역</div>
+    <div style="margin-top:20px; line-height: 1.8; text-align:left;">
+      <div><strong>서비스:</strong> <span id="bdService"></span></div>
+      <div><strong>요청사항:</strong> <span id="bdNote"></span></div>
+      <div><strong>상태:</strong> <span id="bdStatus"></span></div>
+      <div><strong>신청일:</strong> <span id="bdDate"></span></div>
+    </div>
+    <button class="btn-primary btn-full" style="margin-top:20px" onclick="closeModal('bookingDetail')">확인</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('review')">✕</button>
+    <div class="modal-title">후기 작성</div>
+    <form onsubmit="submitReview(event)" style="margin-top:20px; text-align:left;">
+      <input type="hidden" id="revBookingId">
+      <div class="form-group">
+        <label class="form-label">별점</label>
+        <select class="form-input" id="revRating">
+          <option value="5">★★★★★ (5점)</option>
+          <option value="4">★★★★☆ (4점)</option>
+          <option value="3">★★★☆☆ (3점)</option>
+          <option value="2">★★☆☆☆ (2점)</option>
+          <option value="1">★☆☆☆☆ (1점)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">리뷰 내용</label>
+        <textarea class="form-input" id="revText" rows="4" placeholder="서비스에 대한 후기를 남겨주세요." required style="resize:none;"></textarea>
+      </div>
+      <button type="submit" class="btn-primary btn-full" style="margin-top:8px">후기 등록</button>
+    </form>
+  </div>
+</div>
+
 <!-- CONTENT -->
 <div class="page-wrapper">
   <div class="container">
@@ -110,6 +149,15 @@
               <div class="form-group"><label class="form-label">연령대</label>
                 <select class="form-input" id="editAge" style="appearance:none"><option value="">선택</option><option value="20s">20대</option><option value="30s">30대</option></select>
               </div>
+              <div class="form-group"><label class="form-label">키 (cm)</label><input class="form-input" type="number" id="editHeight" placeholder="170"></div>
+              <div class="form-group"><label class="form-label">몸무게 (kg)</label><input class="form-input" type="number" id="editWeight" placeholder="65"></div>
+              <div class="form-group"><label class="form-label">상의 사이즈</label>
+                <select class="form-input" id="editTopSize" style="appearance:none"><option value="">선택</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+              </div>
+              <div class="form-group"><label class="form-label">하의 사이즈</label>
+                <select class="form-input" id="editBottomSize" style="appearance:none"><option value="">선택</option><option value="26">26</option><option value="28">28</option><option value="30">30</option><option value="32">32</option><option value="34">34</option><option value="36">36</option></select>
+              </div>
+              <div class="form-group" style="grid-column:1/-1"><label class="form-label">평소 즐겨입는 스타일</label><input class="form-input" id="editStyle" placeholder="예: 미니멀, 스트릿 등"></div>
               <div style="grid-column:1/-1;margin-top:8px"><button class="btn-primary" type="submit">저장하기</button></div>
             </form>
           </div>

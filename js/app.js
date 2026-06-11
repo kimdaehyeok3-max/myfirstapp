@@ -57,8 +57,23 @@ function requireLogin(page) {
   navigate(page);
 }
 
+function toggleDarkMode() {
+  var isDark = document.body.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.body.removeAttribute('data-theme');
+    localStorage.removeItem('fitmate_theme');
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('fitmate_theme', 'dark');
+  }
+}
+
 // ── Initialization ──
 document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('fitmate_theme') === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
+  }
+
   var pageId = document.body.getAttribute('data-page');
 
   // Redirect to landing if accessing protected pages while logged out

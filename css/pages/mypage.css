@@ -75,6 +75,7 @@
 .status-pending { background: #FFF3E0; color: #E07832; }
 .status-complete { background: #E8F5E9; color: #2D8F4E; }
 .status-progress { background: #E3F2FD; color: #3A7BDD; }
+.status-cancelled { background: #F5F5F5; color: #757575; }
 
 /* Mypage tab visibility */
 .mypage-tab { display: none; }

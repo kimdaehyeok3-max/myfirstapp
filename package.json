@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "핏메이트 퍼스널 스타일링 웹 앱",
   "main": "index.html",
+  "homepage": "https://kimdaehyeok3-max.github.io/fitmate_1",
   "scripts": {
+    "deploy": "gh-pages -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

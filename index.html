@@ -21,6 +21,7 @@
       <a href="#personas" onclick="scrollToSection('personas'); return false;">스토리</a>
       <a href="#reviews" onclick="scrollToSection('reviews'); return false;">후기</a>
     </div>
+    <button class="btn-text theme-toggle" onclick="toggleDarkMode()" style="margin-right:12px;font-size:1.1rem" title="다크 모드 켜기/끄기">🌙</button>
     <div class="nav-auth" id="navAuth">
       <button class="btn-text" onclick="openModal('login')">로그인</button>
       <button class="btn-primary" onclick="openModal('register')">시작하기</button>
@@ -223,6 +224,20 @@
             <div class="pricing-feature">20% 할인 적용</div>
           </div>
           <button class="btn-primary btn-full" onclick="requireLogin('booking')">신청하기</button>
+        </div>
+        <div class="pricing-card fade-up">
+          <div class="pricing-name">Delivery</div>
+          <div class="pricing-title">구매 대행</div>
+          <div class="pricing-price">별도 문의 <span>/ 건당</span></div>
+          <div class="pricing-desc">번거로운 쇼핑을 대신해 드립니다</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">스타일리스트 직접 구매 및 배송</div>
+            <div class="pricing-feature">체형/취향 맞춤 아이템 큐레이션</div>
+            <div class="pricing-feature">원하는 예산에 맞춘 브랜드 탐색</div>
+            <div class="pricing-feature">실비 및 배송비 합산 결제</div>
+            <div class="pricing-feature">반품/교환 가이드 제공</div>
+          </div>
+          <button class="btn-primary btn-full" onclick="requireLogin('booking')">문의하기</button>
         </div>
       </div>
       <div class="payment-info-block fade-up" style="margin-top:40px;background:var(--white);padding:30px;border-radius:12px;box-shadow:var(--shadow-sm)">
